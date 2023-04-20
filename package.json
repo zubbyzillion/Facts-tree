@@ -1,0 +1,19 @@
+{
+  "name": "facts-tree",
+  "version": "1.0.0",
+  "description": "A project to share reliable facts and information",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zubbyzillion/Facts-tree.git"
+  },
+  "author": "Beluonwu-Ogbo Nzubechukwu .P",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zubbyzillion/Facts-tree/issues"
+  },
+  "homepage": "https://github.com/zubbyzillion/Facts-tree#readme"
+}
