@@ -53,6 +53,11 @@
     font-family: inherit;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $background-color;
+    }
 }
 
 ul {
@@ -83,11 +88,12 @@ ul {
     cursor: pointer;
     border-radius: 100px;
     transition: 0.3s;
+
+    &:hover {
+        transform: scale(110%) rotate(-2deg);
+    }
 }
 
-.btn:hover {
-    transform: scale(110%) rotate(-2deg);
-}
 
 .btn-large{
     font-size: 20px;

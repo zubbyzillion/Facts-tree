@@ -1,0 +1,26 @@
+.fact-form {
+    background-color: $fact-bg-color;
+    margin-bottom: 40px;
+    padding: 16px 40px;
+    text-align: center;
+
+    & span {
+        font-weight: 600;
+        font-size: 18px;
+        margin-right: 18px;
+    }
+
+    & input, & select {
+        background-color: $vote-button-color;
+        border: none;
+        border-radius: 100px;
+        padding: 16px;
+        font-size: 18px;
+        color: inherit;
+        font-family: inherit;
+    }
+
+    & input::placeholder {
+        color: $link-color;
+    }
+}
