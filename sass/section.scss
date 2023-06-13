@@ -35,6 +35,26 @@
     border-radius: 100px;
 }
 
+.vote-buttons {
+    margin-left: auto;
+    flex-shrink: 0;
+
+    display: flex;
+    gap: 8px;
+}
+
+.vote-buttons button {
+    border: none;
+    background-color: $vote-button-color;
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    color: inherit;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 ul {
     list-style: none;
     // color: $color-white;
