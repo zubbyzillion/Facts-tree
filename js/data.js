@@ -47,3 +47,13 @@ const CATEGORIES = [
   
   // 👍 🤯 ⛔️
   
+curl 'https://ywrkgrgyvxhhejztanpt.supabase.co/rest/v1/Facts?select=id' \
+-H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3cmtncmd5dnhoaGVqenRhbnB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODY3MTkwMzAsImV4cCI6MjAwMjI5NTAzMH0.Vlj8SXhL2_KbF9VsypPX44w8fsKra5GCgIAz3C6qX2o" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3cmtncmd5dnhoaGVqenRhbnB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODY3MTkwMzAsImV4cCI6MjAwMjI5NTAzMH0.Vlj8SXhL2_KbF9VsypPX44w8fsKra5GCgIAz3C6qX2o"
+
+
+
+
+curl 'https://ywrkgrgyvxhhejztanpt.supabase.co/rest/v1/Facts' \
+-H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3cmtncmd5dnhoaGVqenRhbnB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODY3MTkwMzAsImV4cCI6MjAwMjI5NTAzMH0.Vlj8SXhL2_KbF9VsypPX44w8fsKra5GCgIAz3C6qX2o" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3cmtncmd5dnhoaGVqenRhbnB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODY3MTkwMzAsImV4cCI6MjAwMjI5NTAzMH0.Vlj8SXhL2_KbF9VsypPX44w8fsKra5GCgIAz3C6qX2o"

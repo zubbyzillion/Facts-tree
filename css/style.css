@@ -63,6 +63,9 @@ h1 {
   .fact-form input::placeholder {
     color: #a8a29e; }
 
+.hidden {
+  display: none !important; }
+
 @media (max-width: 1000px) {
   body {
     padding: 32px 48px; }
