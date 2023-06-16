@@ -10,3 +10,30 @@ btn.addEventListener("click", function () {
         btn.textContent = "Share a Fact";
     }
 });
+
+// Functions
+
+function calcYear(year) {
+    const currentYear = new Date().getFullYear();
+    const currentAge = currentYear - year;
+
+    if (currentAge >= 0) return currentAge;
+    else return ("This is a Negative Year!");
+
+    // return currentAge;
+}
+
+console.log(calcYear(2035));
+
+// If Else
+
+let votesInteresting = 20;
+let votesMindBlowing = 12;
+
+if (votesInteresting === votesMindBlowing) {
+    alert("This facts is equally interesting and mind blowing");
+} else if (votesInteresting > votesMindBlowing) {
+    console.log("This InterestingFact!");
+}
+
+// Tenary Operator
