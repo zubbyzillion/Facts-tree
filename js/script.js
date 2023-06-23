@@ -28,7 +28,7 @@ console.log(calcYear(2035));
 // If Else
 
 let votesInteresting = 20;
-let votesMindBlowing = 12;
+let votesMindBlowing = 5;
 
 if (votesInteresting === votesMindBlowing) {
     alert("This facts is equally interesting and mind blowing");
@@ -37,3 +37,10 @@ if (votesInteresting === votesMindBlowing) {
 }
 
 // Tenary Operator
+
+let votesFalse = 7;
+const totalUpVotes = votesInteresting + votesMindBlowing;
+
+const message = totalUpVotes > votesFalse ? "The Fact is True" : "Might be false, check more sources...";
+
+alert(message);
