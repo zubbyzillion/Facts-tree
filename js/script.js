@@ -26,7 +26,7 @@ function calcYear(year) {
 console.log(calcYear(2035));
 
 // If Else
-
+/*
 let votesInteresting = 20;
 let votesMindBlowing = 5;
 
@@ -53,3 +53,10 @@ console.log(upperText);
 
 const str = `The current fact is "${text}". It is ${calcYear(2015)} years old. It is probably ${totalUpVotes > votesFalse ? "correct" : "not true"}.`; // Template Literal/string.
 console.log(str);
+*/
+
+// Arrow Functions
+
+// const calcFactAge2 = (year) =>  2022 - year;
+const calcFactAge2 = (year) => year <= new Date().getFullYear() ? new Date().getFullYear() -year :  `This is a Negative Year. Year needs to be equal or less than ${new Date().getFullYear()}.`;
+console.log(calcFactAge2(2015));
