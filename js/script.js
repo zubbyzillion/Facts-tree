@@ -18,7 +18,7 @@ function calcYear(year) {
     const currentAge = currentYear - year;
 
     if (currentAge >= 0) return currentAge;
-    else return ("This is a Negative Year!");
+    else return (`This is a Negative Year. Year needs to be equal or less than ${currentYear}.`);
 
     // return currentAge;
 }
@@ -43,4 +43,13 @@ const totalUpVotes = votesInteresting + votesMindBlowing;
 
 const message = totalUpVotes > votesFalse ? "The Fact is True" : "Might be false, check more sources...";
 
-alert(message);
+// alert(message);
+
+// Strings
+
+const text = "Lisbon is the capital of Portugal.";
+const upperText = text.toUpperCase(); // A Method is a function called unto something(string or variable)
+console.log(upperText);
+
+const str = `The current fact is "${text}". It is ${calcYear(2015)} years old. It is probably ${totalUpVotes > votesFalse ? "correct" : "not true"}.`; // Template Literal/string.
+console.log(str);
