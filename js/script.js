@@ -1,3 +1,4 @@
+/*
 const btn = document.querySelector(".btn-open");
 const form = document.querySelector(".fact-form");
 
@@ -22,8 +23,9 @@ function calcYear(year) {
 
     // return currentAge;
 }
+*/
+// console.log(calcYear(2035));
 
-console.log(calcYear(2035));
 
 // If Else
 /*
@@ -54,9 +56,23 @@ console.log(upperText);
 const str = `The current fact is "${text}". It is ${calcYear(2015)} years old. It is probably ${totalUpVotes > votesFalse ? "correct" : "not true"}.`; // Template Literal/string.
 console.log(str);
 */
-
+/*
 // Arrow Functions
 
 // const calcFactAge2 = (year) =>  2022 - year;
 const calcFactAge2 = (year) => year <= new Date().getFullYear() ? new Date().getFullYear() -year :  `This is a Negative Year. Year needs to be equal or less than ${new Date().getFullYear()}.`;
 console.log(calcFactAge2(2015));
+*/
+
+// Array
+
+const fact = ["Lisbon is the  capital of Portugal", 2015, true];
+console.log(fact);
+console.log(2);
+console.log(fact.length);
+
+const [text, createdIn, isCorrect] = fact;
+console.log(text); //Destructuring.
+
+const newFact = [...fact, " society"]; // Spreading
+console.log(newFact);
