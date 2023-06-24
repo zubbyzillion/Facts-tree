@@ -76,3 +76,5 @@ console.log(text); //Destructuring.
 
 const newFact = [...fact, " society"]; // Spreading
 console.log(newFact);
+
+// Objects
