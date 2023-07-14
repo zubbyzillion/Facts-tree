@@ -53,7 +53,7 @@ async function loadFacts() {
   const data = await res.json();
   const filteredData = data.filter((fact) => fact.category === "society");
 
-  createFactsList(filteredData);
+  createFactsList(data);
 };
 
 
@@ -72,6 +72,8 @@ const CATEGORIES = [
   { name: "news", color: "#8b5cf6" },
 ];
 
+// console.log(CATEGORIES.find((cat) => cat.name === "society").color);
+
 function createFactsList(dataArray)  {
   const htmlArr = dataArray.map(
     (fact) => `<li class="fact">
@@ -79,7 +81,7 @@ function createFactsList(dataArray)  {
       <a class="source" href="${fact.source}" target="_blank">(Source)</a> 
     </p>
   
-    <span class="tag" style="background-color: #3b82f6">${fact.category}</span>
+    <span class="tag" style="background-color: ${CATEGORIES.find((cat) => cat.name === fact.category).color}">${fact.category}</span>
     </li>`);
   
   // console.log(htmlArr);
