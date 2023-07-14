@@ -39,9 +39,31 @@ const factsList = document.querySelector(".facts-list");
 
 //Creating DOM elements:Render facts in list
 factsList.innerHTML = "";
-createFActsList(initialFacts);
+
+// Load data from Supabase
+const res = fetch("https://ywrkgrgyvxhhejztanpt.supabase.co/rest/v1/Facts", {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3cmtncmd5dnhoaGVqenRhbnB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODY3MTkwMzAsImV4cCI6MjAwMjI5NTAzMH0.Vlj8SXhL2_KbF9VsypPX44w8fsKra5GCgIAz3C6qX2o",
+    authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl3cmtncmd5dnhoaGVqenRhbnB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODY3MTkwMzAsImV4cCI6MjAwMjI5NTAzMH0.Vlj8SXhL2_KbF9VsypPX44w8fsKra5GCgIAz3C6qX2o",
+  },
+});
+
+console.log(res);
+
+// createFactsList(initialFacts);
 
 // factsList.insertAdjacentHTML("afterbegin", "<li>Zubby</li>");
+
+const CATEGORIES = [
+  { name: "technology", color: "#3b82f6" },
+  { name: "science", color: "#16a34a" },
+  { name: "finance", color: "#ef4444" },
+  { name: "society", color: "#eab308" },
+  { name: "entertainment", color: "#db2777" },
+  { name: "health", color: "#14b8a6" },
+  { name: "history", color: "#f97316" },
+  { name: "news", color: "#8b5cf6" },
+];
 
 function createFactsList(dataArray)  {
   const htmlArr = dataArray.map(
