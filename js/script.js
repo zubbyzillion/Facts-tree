@@ -51,7 +51,9 @@ async function loadFacts() {
     },
   })
   const data = await res.json();
-  createFactsList(data);
+  const filteredData = data.filter((fact) => fact.category === "society");
+
+  createFactsList(filteredData);
 };
 
 
@@ -88,6 +90,9 @@ function createFactsList(dataArray)  {
 
 // Filter Method
 console.log([7, 61, 42, 11, -12].filter((el) => el > 10));
+
+// Find Method
+console.log([7, 61, 42, 11, -12].find((el) => el > 10));
 
 // Toggle form visibility
 btn.addEventListener("click", function () {
