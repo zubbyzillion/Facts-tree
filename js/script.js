@@ -80,12 +80,14 @@ function createFactsList(dataArray)  {
     <span class="tag" style="background-color: #3b82f6">${fact.category}</span>
     </li>`);
   
-  console.log(htmlArr);
+  // console.log(htmlArr);
   const html = htmlArr.join("");
   factsList.insertAdjacentHTML("afterbegin", html);
   
 }
 
+// Filter Method
+console.log([7, 61, 42, 11, -12].filter((el) => el > 10));
 
 // Toggle form visibility
 btn.addEventListener("click", function () {
