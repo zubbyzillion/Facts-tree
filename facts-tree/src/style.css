@@ -10,7 +10,7 @@ body {
   padding: 48px 64px; }
 
 /* MAIN LAYOUTS */
-.container {
+#root {
   max-width: 1500px;
   margin: 0 auto; }
 
