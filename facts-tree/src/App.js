@@ -86,9 +86,18 @@ function FactList() {
 
   return <section><ul className="facts-list"></ul>{
     facts.map((fact => (
-      <li key={fact.id} className="fact">
+      <Fact key={fact.id} fact={fact} />
+      )))
+  }
+  <p>There are {facts.length} facts in the database.</p>
+  </section>;
+}
+
+function Fact({ fact }) {
+  return (
+    <li className="fact">
       <p> {fact.text}
-          <a className="source" href={fact.source} target="_blank">(Source)</a> 
+          <a className="source" href={fact.source} target="_blank" rel="noreferrer">(Source)</a> 
       </p>
 
       <span className="tag" style={{backgroundColor: CATEGORIES.find((cat) => cat.name === fact.category).color}}>{fact.category}</span>
@@ -98,8 +107,8 @@ function FactList() {
           <button>🤯 {fact.votesMindblowing}</button>
           <button>⛔️ {fact.votesFalse}</button>
       </div>
-  </li>)))
-  }</section>;
+  </li>
+  );
 }
 
 export default App;
