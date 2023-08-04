@@ -42,7 +42,7 @@ function Counter() {
   return (
     <div>
       <span style={{ fontSize: '40px' }}>{count}</span>
-      <button className="btn btn-large" onClick={() => setCount( count + 1 )}>+1</button>
+      <button className="btn btn-large" onClick={() => setCount((c) => c + 1)}>+1</button>
     </div>
   )
 }
