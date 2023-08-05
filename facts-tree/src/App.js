@@ -48,6 +48,8 @@ function Counter() {
 }
 
 function App() {
+  // 1. Use State Variable
+  const [showForm, setShowForm] = useState(false);
   const appTitle = "Fact Tree";
 
   return (
@@ -58,11 +60,13 @@ function App() {
             <img src="logo.png" alt="Facts Tree" />
             <h1>{appTitle}</h1>
         </div>
-          <button className="btn btn-large btn-open">Share a Fact</button>
+          <button className="btn btn-large btn-open"
+          // 3. Update State Variable
+          onClick={() => setShowForm((show) => !show)}>Share a Fact</button>
       </header>
 
-      <Counter />
-      <NewFactForm />
+      {/* 2. Set State Variable */}
+      {showForm ? <NewFactForm /> : null}
 
       <main className="main">
         <CategoryFilter />
