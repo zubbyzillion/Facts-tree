@@ -84,7 +84,20 @@ function Header({ showForm, setShowForm }) {
 }
 
 function NewFactForm() {
-  return <form className="fact-form">Fact Form</form>;
+  return (
+    <form className="fact-form">
+      <input type="text" placeholder="Share a fact with the world!!!"/>
+              <span>200</span>
+              <input type="text" placeholder="Trustworthy Source..."/>
+              <select>
+                  <option value="">Choose Category:</option>
+                  <option value="technology">Technology</option>
+                  <option value="science">Science</option>
+                  <option value="finance">Finance</option>
+              </select>
+              <button className="btn btn-large">Post</button>
+    </form>
+  );
 }
 
 const CATEGORIES = [
