@@ -50,6 +50,7 @@ function Counter() {
 function App() {
   // 1. Use State Variable
   const [showForm, setShowForm] = useState(false);
+  const [facts, setFacts] = useState(initialFacts);
 
   return (
     <>
@@ -57,11 +58,11 @@ function App() {
       <Header showForm={showForm} setShowForm={setShowForm}/>
 
       {/* 2. Set State Variable */}
-      {showForm ? <NewFactForm /> : null}
+      {showForm ? <NewFactForm setFacts={setFacts} /> : null}
 
       <main className="main">
         <CategoryFilter />
-        <FactList />
+        <FactList facts={facts} />
       </main>
     </>
   );
@@ -94,7 +95,17 @@ const CATEGORIES = [
   { name: "news", color: "#8b5cf6" },
 ];
 
-function NewFactForm() {
+function isValidHttpUrl(string) {
+  let  url;
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+  return url.protocol === "http:" || url.protocol === "https:";
+}
+
+function NewFactForm({ setFacts }) {
   const [text, setText] = useState("");
   const [source, setSource] = useState("http://example.com");
   const [category, setCategory] = useState("");
@@ -106,7 +117,7 @@ function NewFactForm() {
     console.log(text, source, category);
 
     // 2. Chceck if data is valid. If so, create a new fact.
-    if(text && isValidHttpUrl(source) && category && textLength <= 200) {
+    if (text && isValidHttpUrl(source) && category && textLength <= 200) {
 
       // 3. Create a new fact object
       const newFact = {
@@ -159,10 +170,8 @@ function CategoryFilter() {
   )
 }
 
-function FactList() {
+function FactList({ facts }) {
   // TEMPORARY
-
-  const facts = initialFacts;
 
   return (
     <section>
