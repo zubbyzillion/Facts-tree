@@ -58,7 +58,7 @@ function App() {
       <Header showForm={showForm} setShowForm={setShowForm}/>
 
       {/* 2. Set State Variable */}
-      {showForm ? <NewFactForm setFacts={setFacts} /> : null}
+      {showForm ? <NewFactForm setFacts={setFacts} setShowForm={setShowForm} /> : null}
 
       <main className="main">
         <CategoryFilter />
@@ -103,9 +103,9 @@ function isValidHttpUrl(string) {
     return false;
   }
   return url.protocol === "http:" || url.protocol === "https:";
-}
+};
 
-function NewFactForm({ setFacts }) {
+function NewFactForm({ setFacts, setShowForm }) {
   const [text, setText] = useState("");
   const [source, setSource] = useState("http://example.com");
   const [category, setCategory] = useState("");
@@ -128,14 +128,19 @@ function NewFactForm({ setFacts }) {
         votesInteresting: 0,
         votesMindblowing: 0,
         votesFalse: 0,
-        createdIn: new Date.getCurrentYear(),
-      }
+        createdIn: new Date().getFullYear(),
+      };
 
       // 4. Add the new fact to the UI: add the fact to state
+      setFacts((facts) => [newFact, ...facts]);
 
       // 5. Reset input fields
+      setText("");
+      setSource("");
+      setCategory("");
 
       // 6. Close the form
+      setShowForm(false);
     }
   }
 
@@ -151,7 +156,7 @@ function NewFactForm({ setFacts }) {
               <button className="btn btn-large">Post</button>
     </form>
   );
-}
+};
 
 
 function CategoryFilter() {
