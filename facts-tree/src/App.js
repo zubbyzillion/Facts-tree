@@ -96,13 +96,36 @@ const CATEGORIES = [
 
 function NewFactForm() {
   const [text, setText] = useState("");
-  const [source, setSource] = useState("");
+  const [source, setSource] = useState("http://example.com");
   const [category, setCategory] = useState("");
   const textLength = text.length;
 
   function handleSubmit(e) {
+    // 1. Prevent bowser reload
     e.preventDefault();
     console.log(text, source, category);
+
+    // 2. Chceck if data is valid. If so, create a new fact.
+    if(text && isValidHttpUrl(source) && category && textLength <= 200) {
+
+      // 3. Create a new fact object
+      const newFact = {
+        id: Math.round(Math.random() * 10000000),
+        text,
+        source,
+        category,
+        votesInteresting: 0,
+        votesMindblowing: 0,
+        votesFalse: 0,
+        createdIn: new Date.getCurrentYear(),
+      }
+
+      // 4. Add the new fact to the UI: add the fact to state
+
+      // 5. Reset input fields
+
+      // 6. Close the form
+    }
   }
 
   return (
