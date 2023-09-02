@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import supabase  from './supabase';
+
 import "./style.css";
 
 
@@ -50,7 +52,17 @@ function Counter() {
 function App() {
   // 1. Use State Variable
   const [showForm, setShowForm] = useState(false);
-  const [facts, setFacts] = useState(initialFacts);
+  const [facts, setFacts] = useState([]);
+
+  useEffect(function() {
+    async function getFacts() {
+      const { data: facts, error } = await supabase
+      .from('Facts')
+      .select('*');
+      setFacts(facts);
+    }
+    getFacts();
+  }, []);
 
   return (
     <>
