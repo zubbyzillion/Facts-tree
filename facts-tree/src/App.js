@@ -59,10 +59,17 @@ function App() {
     async function getFacts() {
       setIsLoading(true);
       const { data: facts, error } = await supabase
-      .from('facts')
-      .select('*');
-      setFacts(facts);
-      // setIsLoading(false);
+      .from('Facts')
+      .select('*').order("votesInteresting", { ascending: false }).limit(1000);
+
+      // To limit the amount of data from the database to be displayed.(.limit())
+
+      // console.log(facts);
+      console.log(error);
+
+      if (!error) setFacts(facts);
+      else alert("There was a problem fetching data");
+      setIsLoading(false);
     }
     getFacts();
   }, []);
