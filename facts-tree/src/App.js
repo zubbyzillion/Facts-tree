@@ -59,9 +59,13 @@ function App() {
   useEffect(function() {
     async function getFacts() {
       setIsLoading(true);
-      const { data: facts, error } = await supabase
-      .from('Facts')
-      .select('*').eq("category", "technology")
+
+      let query = supabase.from("facts").select("*");
+
+      if (currentCategory !== "all")
+      query = query.eq("category", currentCategory);
+
+      const { data: facts, error } = await query
       .order("votesInteresting", { ascending: false }).limit(1000);
 
       // To limit the amount of data from the database to be displayed.(.limit())
@@ -74,7 +78,7 @@ function App() {
       setIsLoading(false);
     }
     getFacts();
-  }, []);
+  }, [currentCategory]);
 
   return (
     <>
