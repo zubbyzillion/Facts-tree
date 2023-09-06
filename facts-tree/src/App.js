@@ -60,10 +60,10 @@ function App() {
     async function getFacts() {
       setIsLoading(true);
 
-      let query = supabase.from("facts").select("*");
+      let query = supabase.from("Facts").select("*");
 
       if (currentCategory !== "all")
-      query = query.eq("category", currentCategory);
+      query = query.eq("category", currentCategory)
 
       const { data: facts, error } = await query
       .order("votesInteresting", { ascending: false }).limit(1000);
